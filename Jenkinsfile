@@ -1,5 +1,4 @@
-@Library('roboshop-shared-library@main')
-
+@Library('roboshop-shared-library')
 pipeline {
     agent any 
     stages {
