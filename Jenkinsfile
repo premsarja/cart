@@ -10,7 +10,7 @@ pipeline {
                     sh "echo Installing JSLint"
                     sh "npm install jslint"
                     sh "echo Starting lint checks**********"
-                    sh "node_modules/.bin/jslint.js server.js || true"
+                    sh "node_modules/.bin/jslint.js server.js"
                     sh "echo Lint checks completed"
                 }
             }
