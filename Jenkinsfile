@@ -1,25 +1,22 @@
-@Library('roboshob-shared-library@main') 
+@Library('roboshob-shared-library@main')
+
 pipeline {
     agent any 
     stages {
         stage('Lint Checks') {
             steps {
-                script{
-                sample.info()
-                }
-                sh "echo Installing JSlist"
+                sh "echo Installing JSLint"
                 sh "npm i jslint"
-                sh "echo starting lintchecks"
+                sh "echo Starting lint checks"
                 sh "node_modules/jslint/bin/jslint.js server.js || true"
-                sh "echo linkchecks completed"
+                sh "echo Lint checks completed"
             }
         }
-                      stage('genearating Artifacts'){
-          steps{
-            sh "echo genrating Artifacts*********"
-            sh "npm install && ls -ltr"
-          }
-       } 
-
+        stage('Generating Artifacts') {
+            steps {
+                sh "echo Generating Artifacts*********"
+                sh "npm install && ls -ltr"
+            }
+        }
     }
 }
