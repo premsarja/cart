@@ -1,12 +1,12 @@
-@Library('roboshop-shared-library@main') _
+@Library('roboshop-shared-library@main')
 
-pipeline{
-  agent any 
-  stages {
+pipeline {
+    agent any 
+    stages {
         stage('Lint Checks') {
             steps {
                 script {
-                    sample.info()
+                    sample.info("devops")
                 }
                 sh "echo Installing JSLint"
                 sh "npm install jslint"
