@@ -7,6 +7,7 @@ pipeline {
             steps {
                 script {
                     sample.info()
+                }
                     sh "echo Installing JSLint"
                     sh "npm install jslint"
                     sh "echo Starting lint checks**********"
