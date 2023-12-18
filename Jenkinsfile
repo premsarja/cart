@@ -6,14 +6,14 @@ pipeline {
         stage('Lint Checks') {
             steps {
                 script {
-                    node.lintchecks()
+                  node.lintchecks()
                 }
             }
         }
         stage('Generating Artifacts') {
-             steps {
-                 sh "echo Generating Artifacts"
-                 sh "npm install"
+            steps {
+                sh "echo Generating Artifacts"
+                sh "npm install"
             }
         }
     }
