@@ -6,16 +6,10 @@ pipeline {
         stage('Lint Checks') {
             steps {
                 script {
-                    sample.info("tainwithmanu")
-                }
-                    sh "echo Installing JSLint"
-                    sh "npm install jslint"
-                    sh "echo Starting lint checks**********"
-                    sh "node_modules/jslint/bin/jslint.js server.js || true"
-                    sh "echo Lint checks completed"
+                    node.lintchecks()
                 }
             }
-        
+        }
         stage('Generating Artifacts') {
              steps {
                  sh "echo Generating Artifacts"
